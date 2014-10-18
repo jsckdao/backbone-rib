@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title>Table</title>
+  <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+  <table class="table" style="width: 600px;">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Phone</th>
+        <th>Money</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="data-rows">
+        <td bb-attr="name"></td>
+        <td bb-attr="phone"></td>
+        <td><input type="text" name="money" /></td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <td style="color: red;">Total: <span class="total"></span></td>
+        <td> </td>
+        <td> </td>
+      </tr>
+    </tfoot>
+  </table>
+</body>
+
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="http://underscorejs.org/underscore-min.js"></script>
+<script type="text/javascript" src="http://backbonejs.org/backbone-min.js"></script>
+<script type="text/javascript" src="../src/backbone-rib.js"></script>
+<script type="text/javascript">
+
+  var TableCollection = Backbone.Collection.extend({
+    getTotalMoney: function() {
+      var sum = 0;
+      this.each(function(model) {
+        sum += parseFloat(model.get('money'), 10) || 0;
+      })
+      return sum;
+    }
+  });
+
+  var TableView = Backbone.View.extend({
+    el: '.table',
+    initialize: function(options) {
+      var self = this;
+      var coll = new TableCollection(options);
+      this.bindData('.data-rows', coll);
+      coll.on('change:money', function() {
+        self.$el.find('.total').html(coll.getTotalMoney());
+      });
+    }
+  });
+
+  new TableView([
+    { name: 'Jack', phone: '8842-1399533', money: 57.3 },
+    { name: 'John', phone: '8842-9480113', money: 87.9 },
+    { name: 'Lucy', phone: '8231-2155612', money: 187.9 },
+    { name: 'Tom', phone: '1354-1234212', money: 72.88 },
+    { name: 'Jim', phone: '8842-1246677', money: 93.11 }
+  ]);
+</script>
+</html>

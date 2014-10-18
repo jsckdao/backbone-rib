@@ -1,0 +1,23 @@
+{
+  "name": "backbone-rib",
+  "version": "0.0.1",
+  "description": "this is a extention for backbone MVC framework. It provid data bind for backbone Modle",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:jsckdao/backbone-rib.git"
+  },
+  "keywords": [
+    "backbone",
+    "extention"
+  ],
+  "author": "jsckdao",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jsckdao/backbone-rib/issues"
+  },
+  "homepage": "https://github.com/jsckdao/backbone-rib"
+}

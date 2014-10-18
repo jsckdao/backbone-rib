@@ -1,0 +1,1 @@
+这是一个对Backbone的扩展功能包, 为Backbone提供一个简单数据绑定功能, 以弥补Backbone在这方面的不足.
