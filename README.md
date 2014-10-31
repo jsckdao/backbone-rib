@@ -177,6 +177,7 @@ var view = new Backbone.View.extend({
 
   ....
 });
+```
 
 数据解除绑定
 ----------
