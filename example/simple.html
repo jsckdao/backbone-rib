@@ -6,8 +6,8 @@
 </head>
 <body>
     <div id="testDiv">
-      <input type="text" name="testText" /> <br />
-      bind1: <span bb-attr="testText"></span>  <br />
+      <input type="text" name="testText" rb-listen="keydown" /> <br />
+      bind1: <span name="testText"></span>  <br />
       bind2: <span class="tp"></span>  <br />
       <select name="sel">
         <option value="test1">test1</option>
@@ -16,21 +16,21 @@
         <option value="test4">test4</option>
         <option value="test5">test5</option>
       </select> <br />
-      bind3: <span bb-attr="sel"></span>
+      bind3: <span name="sel"></span>
       <div>
         radio1: <input type="radio" name="radioData" value="radio1" >
         radio2: <input type="radio" name="radioData" value="radio2" >
         radio3: <input type="radio" name="radioData" value="radio3" >
         radio4: <input type="radio" name="radioData" value="radio4" >
         <br />
-        bind4: <span bb-attr="radioData"></span>
+        bind4: <span name="radioData" rb-render="value + ' -- filter '"></span>
       </div>
     </div>
 </body>
 
-<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
-<script type="text/javascript" src="http://underscorejs.org/underscore-min.js"></script>
-<script type="text/javascript" src="http://backbonejs.org/backbone-min.js"></script>
+<script type="text/javascript" src="../lib/jquery.min.js"></script>
+<script type="text/javascript" src="../lib/underscore-min.js"></script>
+<script type="text/javascript" src="../lib/backbone-min.js"></script>
 <script type="text/javascript" src="../src/backbone-rib.js"></script>
 <script type="text/javascript">
   var TextView = Backbone.View.extend({
@@ -42,7 +42,7 @@
         radioData: 'radio3'
       });
       this.bindData(model);
-      this.bindData('.tp', model, 'testText');
+      //this.bindData('.tp', model, 'testText');
     }
   });
 

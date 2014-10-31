@@ -16,8 +16,8 @@
     </thead>
     <tbody>
       <tr class="data-rows">
-        <td bb-attr="name"></td>
-        <td bb-attr="phone"></td>
+        <td name="name"></td>
+        <td name="phone"></td>
         <td><input type="text" name="money" /></td>
       </tr>
     </tbody>
@@ -31,9 +31,9 @@
   </table>
 </body>
 
-<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
-<script type="text/javascript" src="http://underscorejs.org/underscore-min.js"></script>
-<script type="text/javascript" src="http://backbonejs.org/backbone-min.js"></script>
+<script type="text/javascript" src="../lib/jquery.min.js"></script>
+<script type="text/javascript" src="../lib/underscore-min.js"></script>
+<script type="text/javascript" src="../lib/backbone-min.js"></script>
 <script type="text/javascript" src="../src/backbone-rib.js"></script>
 <script type="text/javascript">
 
@@ -53,9 +53,7 @@
       var self = this;
       var coll = new TableCollection(options);
       this.bindData('.data-rows', coll);
-      coll.on('change:money', function() {
-        self.$el.find('.total').html(coll.getTotalMoney());
-      });
+    
     }
   });
 

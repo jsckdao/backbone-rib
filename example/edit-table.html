@@ -3,7 +3,7 @@
 <head lang="en">
   <meta charset="UTF-8">
   <title>Table</title>
-  <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet"> -->
 </head>
 <body>
 <table class="table" style="width: 700px;">
@@ -18,15 +18,15 @@
   <tbody>
   <tr class="data-rows">
     <td>
-      <span bb-attr="name"></span>
+      <span name="name"></span>
       <input type="text" name="name">
     </td>
     <td>
-      <span bb-attr="phone"></span>
+      <span name="phone"></span>
       <input type="text" name="phone">
     </td>
     <td>
-      <span bb-attr="money"></span>
+      <span name="money"></span>
       <input type="text" name="money">
     </td>
     <td>
@@ -48,9 +48,10 @@
 </table>
 </body>
 
-<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
-<script type="text/javascript" src="http://underscorejs.org/underscore-min.js"></script>
-<script type="text/javascript" src="http://backbonejs.org/backbone-min.js"></script>
+
+<script type="text/javascript" src="../lib/jquery.min.js"></script>
+<script type="text/javascript" src="../lib/underscore-min.js"></script>
+<script type="text/javascript" src="../lib/backbone-min.js"></script>
 <script type="text/javascript" src="../src/backbone-rib.js"></script>
 <script type="text/javascript">
 
@@ -98,7 +99,7 @@
     }
   });
 
-  new TableView([
+  var tableView = new TableView([
     { name: 'Jack', phone: '8842-1399533', money: 57.3 },
     { name: 'John', phone: '8842-9480113', money: 87.9 },
     { name: 'Lucy', phone: '8231-2155612', money: 187.9 },
