@@ -1,6 +1,6 @@
 {
   "name": "backbone-rib",
-  "version": "0.1.1",
+  "version": "0.2.1",
   "description": "this is a extention for backbone MVC framework. It provid data bind for backbone Modle",
   "main": "index.js",
   "scripts": {
